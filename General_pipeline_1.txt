@@ -1,0 +1,8 @@
+#trimmomatic
+Date='210123'
+trimmomatic PE -phred33 \
+M-21-4401_20201128P11_illumina-UDI0007-illumina-UDI0007_L002_R1_001.fastq.gz \
+M-21-4401_20201128P11_illumina-UDI0007-illumina-UDI0007_L002_R2_001.fastq.gz \
+P"$Date"_R1_paired.fastq.gz P"$Date"_R1_unpaired.fastq.gz \
+P"$Date"_R2_paired.fastq.gz P"$Date"_R2_unpaired.fastq.gz \
+ILLUMINACLIP:adapters_2.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
