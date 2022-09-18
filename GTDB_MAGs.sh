@@ -12,7 +12,7 @@
 #run the application:
 filename="A200801"
 #MAGs for GTDB must ended by .fna
-module load gtdb-tk/1.0.2/python3.6
+module load gtdb-tk/1.3.0/python3.6
 export GTDBTK_DATA_PATH=/ibex/scratch/wangc0c/My_Tools/GTDB_dt/release95
 for f in ./"$filename"_metawrap_refine/metawrap_70_10_bins/*.fa; do mv -- "$f" "${f%.fa}.fna"; done
 gtdbtk classify_wf --genome_dir ./"$filename"_metawrap_refine/metawrap_70_10_bins/ --out_dir "$filename"_GTDB/
