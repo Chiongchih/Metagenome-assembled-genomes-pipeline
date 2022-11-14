@@ -50,6 +50,13 @@ metawrap bin_refinement -o Q210220_metawrap_refine -t 16 -A ./Q210220_metawrap/m
 
 #Results curation on ibex
 
+for i in *_asm
+do
+cd "$i"/
+cp *.reformat_contigs.fa ../reformat_contigs
+cd ..
+done
+
 mkdir bins_results
 for i in *_refine
 do
@@ -58,14 +65,4 @@ cp ./"$i"/*_70_10_bins.stats ./bins_results/"$i"_results/
 cp -r ./"$i"/*_70_10_bins/ ./bins_results/"$i"_results/
 cp -r ./"$i"/figures/ ./bins_results/"$i"_results/
 done
-
-
-
-
-
-
-
-
-
-
 
