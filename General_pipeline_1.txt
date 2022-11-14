@@ -46,3 +46,26 @@ gunzip Q210220_paired_2.fastq.gz
 metawrap binning -o Q210220_metawrap -t 8 -a ../Megahit_contigs/Q210220_asm/Q210220.reformat_contigs.fa --metabat2 --maxbin2 --concoct ../Trim_output/Q210220_*.fastq
 metawrap bin_refinement -o Q210220_metawrap_refine -t 16 -A ./Q210220_metawrap/metabat2_bins/ -B ./Q210220_metawrap/maxbin2_bins/ -C ./Q210220_metawrap/concoct_bins/ -c 70 -x 10
 #The whole process spend 12 hrs by 8 threads. 
+
+
+#Results curation on ibex
+
+mkdir bins_results
+for i in *_refine
+do
+mkdir ./bins_results/"$i"_results
+cp ./"$i"/*_70_10_bins.stats ./bins_results/"$i"_results/
+cp -r ./"$i"/*_70_10_bins/ ./bins_results/"$i"_results/
+cp -r ./"$i"/figures/ ./bins_results/"$i"_results/
+done
+
+
+
+
+
+
+
+
+
+
+
