@@ -57,6 +57,11 @@ cp *.reformat_contigs.fa ../reformat_contigs
 cd ..
 done
 
+for i in *_GTDB
+do
+cp "$i"/gtdbtk.bac120.summary.tsv ./GTDB_results/"$i".summary.tsv
+done
+
 mkdir bins_results
 for i in *_refine
 do
